@@ -87,7 +87,7 @@
                         <p class="text-gray-400 text-sm">01 Jan, 2021</p>
                     </div>
                 </div>
-                <p class="text-red-500">-$100.00</p>
+                <p class="text-red-500" id="bitcoin-price"></p>
             </div>
             <div class="flex items-center justify-between mb-4">
                 <div class="flex items-center">
@@ -137,6 +137,11 @@
         </div>
     </div>
     <script>
+         fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd')
+		  .then(response => response.json())
+		  .then(data => {
+		 document.getElementById('bitcoin-price').innerText = `$${data.bitcoin.usd}`;
+		})
         // Получаем информацию о пользователе
         const user = Telegram.WebApp.initDataUnsafe.user;
         const userName = user.first_name + " " + (user.last_name || "") || user.username || "User ";
