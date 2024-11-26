@@ -21,7 +21,7 @@
                 <p class="text-gray-400">Welcome back</p>
             </div>
             <div id="profile-avatar" class="w-10 h-10 rounded-full bg-gray-500">
-                <img id="user-avatar" src="" alt="User  Avatar" class="w-full h-full rounded-full">
+                <img id="user-avatar" src="" alt="User  Avatar" class="w-full h-full rounded-full" style="display: none;">
             </div>
         </div>
         <div class="bg-gradient-to-r from-red-500 to-red-700 p-4 rounded-xl mb-6 relative">
@@ -68,7 +68,7 @@
     <script>
         // Получаем информацию о пользователе
         const user = Telegram.WebApp.initDataUnsafe.user;
-        const userName = user.first_name + " " + user.last_name || user.username || "User ";
+        const userName = user.first_name + " " + (user.last_name || "") || user.username || "User ";
         const userId = user.id;
         const userAvatar = user.photo_url || ""; // Если у пользователя есть аватар
 
@@ -77,6 +77,9 @@
         document.getElementById('user-id').innerText = userId;
         if (userAvatar) {
             document.getElementById('user-avatar').src = userAvatar;
+            document.getElementById('user-avatar').style.display = "block"; // Показываем аватар
+        } else {
+            document.getElementById('user-avatar').style.display = "none"; // Скрываем аватар, если его нет
         }
     </script>
 </body>
