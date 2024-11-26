@@ -20,7 +20,9 @@
                 <h1 class="text-xl font-semibold">Hi Rakib</h1>
                 <p class="text-gray-400">Welcome back</p>
             </div>
-            <div id="profile-avatar" class="w-10 h-10 rounded-full bg-gray-500"></div>
+			 <div id="profile-avatar" class="w-10 h-10 rounded-full bg-gray-500">
+				<img id="user-avatar" src="" alt="User  Avatar" class="w-full h-full rounded-full">
+			</div>
         </div>
         <div class="bg-gradient-to-r from-red-500 to-red-700 p-4 rounded-xl mb-6 relative">
             <div class="text-white">
@@ -134,18 +136,10 @@
             <i class="fas fa-user text-gray-400" onclick="window.location.href='settings.html'";></i>
         </div>
     </div>
-    <script>
-	Telegram.WebApp.ready().then(() => {
-	    // Ваш код, который работает с Telegram Web App, 
-	    // например, получение данных пользователя
-	    const user = Telegram.WebApp.initDataUnsafe.user;
-	    if (user.photo_url) {
-	        const avatar = document.getElementById('profile-avatar');
-	        avatar.style.backgroundImage = `url(${user.photo_url})`;
-	        avatar.style.backgroundSize = 'cover';
-	        avatar.style.backgroundPosition = 'center';
-	    }
-	});
+	    <script>
+			const user = window.Telegram.WebApp.getUser ();
+			const avatarUrl = user.photo_url || 'default-avatar.png'; // Укажите путь к изображению по умолчанию
+			document.getElementById('user-avatar').src = avatarUrl;
     </script>
 </body>
 </html>
