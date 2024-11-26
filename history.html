@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1E1E2C;
+            color: #FFFFFF;
+        }
+        .card {
+            background-color: #2A2A3C;
+            border-radius: 12px;
+            padding: 16px;
+        }
+        .active {
+            background-color: #FF5C5C;
+        }
+        .inactive {
+            background-color: #3A3A4C;
+        }
+        .chart {
+            background: linear-gradient(180deg, rgba(255, 92, 92, 0.2) 0%, rgba(255, 92, 92, 0) 100%);
+            border-radius: 12px;
+            padding: 16px;
+        }
+    </style>
+</head>
+<body class="p-4">
+    <div class="flex justify-between items-center mb-4">
+        <i class="fas fa-arrow-left text-xl" onclick="window.location.href='index.html'";></i>
+        <h1 class="text-xl font-semibold">History</h1>
+        <i class="fas fa-ellipsis-v text-xl"></i>
+    </div>
+    <div class="flex justify-between mb-4">
+        <div class="card active flex-1 mr-2 text-center">
+            <p class="text-sm">Expence</p>
+            <p class="text-2xl font-bold">$6,640</p>
+        </div>
+        <div class="card inactive flex-1 ml-2 text-center">
+            <p class="text-sm">Income</p>
+            <p class="text-2xl font-bold">$4,660</p>
+        </div>
+    </div>
+    <div class="flex justify-center mb-4">
+        <button class="text-sm mx-2">Month</button>
+        <button class="text-sm mx-2">Week</button>
+        <button class="text-sm mx-2">Day</button>
+    </div>
+    <div class="chart mb-4">
+        <div class="relative">
+            <div class="absolute left-1/2 transform -translate-x-1/2 -top-6 bg-red-500 text-white rounded-full px-2 py-1 text-xs">$6,482</div>
+            <svg class="w-full h-32">
+                <path d="M0,80 Q40,60 80,70 T160,60 T240,90 T320,50 T400,80 T480,60 T560,70 T640,50" stroke="#FF5C5C" stroke-width="2" fill="none"/>
+                <circle cx="320" cy="50" r="5" fill="#FF5C5C"/>
+            </svg>
+        </div>
+        <div class="flex justify-between text-xs mt-2">
+            <span>FEB</span>
+            <span>MAR</span>
+            <span>APR</span>
+            <span>MAY</span>
+            <span>JUN</span>
+            <span>JUL</span>
+            <span>AUG</span>
+        </div>
+    </div>
+    <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">History</h2>
+        <a href="#" class="text-sm text-red-500">See all</a>
+    </div>
+    <div class="card flex justify-between items-center mb-2">
+        <div class="flex items-center">
+            <div class="bg-gray-700 p-2 rounded-full mr-2">
+                <i class="fas fa-shopping-bag text-white"></i>
+            </div>
+            <div>
+                <p>Clothing Store</p>
+                <p class="text-xs text-gray-400">Shopping</p>
+            </div>
+        </div>
+        <p class="text-red-500">-129.50</p>
+    </div>
+    <div class="card flex justify-between items-center mb-2">
+        <div class="flex items-center">
+            <div class="bg-gray-700 p-2 rounded-full mr-2">
+                <i class="fas fa-user text-white"></i>
+            </div>
+            <div>
+                <p>Jane Foster</p>
+                <p class="text-xs text-gray-400">Send Money</p>
+            </div>
+        </div>
+        <p class="text-red-500">-129.50</p>
+    </div>
+</body>
+</html>

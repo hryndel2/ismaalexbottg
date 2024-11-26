@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Chat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1E1E2C;
+            color: #FFFFFF;
+        }
+        .card {
+            background-color: #2A2A3C;
+            border-radius: 12px;
+            padding: 16px;
+        }
+        .message {
+            background-color: #3A3A4C;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 8px;
+        }
+        .message.user {
+            background-color: #FF5C5C;
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body class="p-4 flex flex-col h-screen">
+    <div class="flex justify-between items-center mb-4">
+        <i class="fas fa-arrow-left text-xl" onclick="window.location.href='index.html'";></i>
+        <h1 class="text-xl font-semibold">Support Chat</h1>
+        <i class="fas fa-ellipsis-v text-xl"></i>
+    </div>
+    <div class="flex-1 overflow-y-auto mb-4" id="chatArea">
+        <div class="message">
+            <p class="text-sm">Hello! How can we assist you today?</p>
+        </div>
+        <div class="message user">
+            <p class="text-sm">I need help with my account.</p>
+        </div>
+        <div class="message">
+            <p class="text-sm">Sure, what seems to be the problem?</p>
+        </div>
+    </div>
+    <div class="flex items-center">
+        <input type="text" id="messageInput" placeholder="Type a message" class="w-full p-2 rounded bg-gray-700 text-white mr-2">
+        <button class="bg-red-500 text-white px-4 py-2 rounded" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const messageText = input.value.trim();
+
+            if (messageText) {
+                // Create a new message element
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'message user';
+                messageDiv.innerHTML = `<p class="text-sm">${messageText}</p>`;
+
+                // Append the new message to the chat area
+                const chatArea = document.getElementById('chatArea');
+                chatArea.appendChild(messageDiv);
+
+                // Clear the input field
+                input.value = '';
+
+                // Scroll to the bottom of the chat area
+                chatArea.scrollTop = chatArea.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>

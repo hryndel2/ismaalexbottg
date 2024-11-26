@@ -1,0 +1,150 @@
+<html>
+<head>
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+	<script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1E1E2C;
+            color: white;
+        }
+    </style>
+</head>
+<body class="p-4">
+    <div class="max-w-sm mx-auto">
+        <div class="flex items-center justify-between mb-6">
+            <div>
+                <h1 class="text-xl font-semibold">Hi Rakib</h1>
+                <p class="text-gray-400">Welcome back</p>
+            </div>
+            <div id="profile-avatar" class="w-10 h-10 rounded-full bg-gray-500"></div>
+        </div>
+        <div class="bg-gradient-to-r from-red-500 to-red-700 p-4 rounded-xl mb-6 relative">
+            <div class="text-white">
+                <p class="text-2xl font-semibold">$10,000</p>
+                <p class="text-sm">Total Balance</p>
+                <p class="mt-4">Rakib Kowshar</p>
+            </div>
+            <div class="absolute top-4 right-4 text-white">
+                <p class="text-sm">05/25</p>
+                <p class="text-lg font-semibold">VISA</p>
+            </div>
+        </div>
+        <div class="mb-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg font-semibold">Upcoming Money</h2>
+                <a href="#" class="text-gray-400">See all</a>
+            </div>
+            <div class="flex justify-between">
+                <div class="bg-gray-700 p-4 rounded-lg w-1/2 mr-2">
+                    <p class="text-gray-400">Salary</p>
+                    <p class="text-lg font-semibold">$2844.50</p>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg w-1/2 ml-2">
+                    <p class="text-gray-400">Business</p>
+                    <p class="text-lg font-semibold">$2844.50</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2 class="text-lg font-semibold mb-4">Transaction</h2>
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center mr-4">
+                        <i class="fab fa-uikit text-white"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold">UI/UX Course</p>
+                        <p class="text-gray-400 text-sm">03 Jan, 2021</p>
+                    </div>
+                </div>
+                <p class="text-red-500">-$80.00</p>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center mr-4">
+                        <i class="fab fa-dribbble text-white"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold">Dribbble Pro</p>
+                        <p class="text-gray-400 text-sm">02 Jan, 2021</p>
+                    </div>
+                </div>
+                <p class="text-red-500">-$59.00</p>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center mr-4">
+                        <i class="fab fa-bitcoin text-white"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold">Bitcoin</p>
+                        <p class="text-gray-400 text-sm">01 Jan, 2021</p>
+                    </div>
+                </div>
+                <p class="text-red-500">-$100.00</p>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center mr-4">
+                        <i class="fab fa-ethereum text-white"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold">Ethereum</p>
+                        <p class="text-gray-400 text-sm">31 Dec, 2020</p>
+                    </div>
+                </div>
+                <p class="text-red-500">-$200.00</p>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-blue-400 flex items-center justify-center mr-4">
+                        <i class="fas fa-coins text-white"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold">TON</p>
+                        <p class="text-gray-400 text-sm">30 Dec, 2020</p>
+                    </div>
+                </div>
+                <p class="text-red-500">-$150.00</p>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center mr-4">
+                        <i class="fas fa-dollar-sign text-white"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold">Other</p>
+                        <p class="text-gray-400 text-sm">29 Dec, 2020</p>
+                    </div>
+                </div>
+                <p class="text-red-500">-$50.00</p>
+            </div>
+        </div>
+        <div class="fixed bottom-0 left-0 right-0 bg-gray-800 p-4 flex justify-around items-center">
+            <i class="fas fa-home text-gray-400" onclick="window.location.href='index.html'";></i>
+            <i class="fas fa-wallet text-gray-400"  onclick="window.location.href='history.html';"></i>
+            <div class="bg-red-500 p-4 rounded-full" onclick="window.location.href='contacts.html';">
+                <i class="fas fa-plus text-white"></i>
+            </div>
+             <i class="fas fa-envelope text-gray-400" onclick="window.location.href='supports.html';"></i>
+            <i class="fas fa-user text-gray-400" onclick="window.location.href='settings.html'";></i>
+        </div>
+    </div>
+	    <script>
+        // Получаем данные пользователя
+        Telegram.WebApp.ready().then(() => {
+            const user = Telegram.WebApp.initDataUnsafe.user;
+            if (user.photo_url) {
+                const avatar = document.getElementById('profile-avatar');
+                avatar.style.backgroundImage = `url(${user.photo_url})`;
+                avatar.style.backgroundSize = 'cover';
+                avatar.style.backgroundPosition = 'center';
+            }
+        });
+    </script>
+</body>
+</html>
