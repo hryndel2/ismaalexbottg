@@ -55,7 +55,7 @@
         const userAvatar = user.photo_url || ""; // Если у пользователя есть аватар
 
         // Устанавливаем имя пользователя, ID и аватар
-        document.getElementById('user-name').innerText = userName;
+        document.getElementById('user-name').innerText = "" + userName;
         document.getElementById('user-id').innerText = userId;
         if (userAvatar) {
             document.getElementById('user-avatar').src = userAvatar;
