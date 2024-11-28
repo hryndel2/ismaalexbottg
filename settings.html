@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
     <script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
@@ -29,8 +31,8 @@
             <i class="fas fa-user text-4xl text-white"></i>
         </div>
         <div>
-            <p class="text-lg font-semibold">John Doe</p>
-            <p class="text-sm text-gray-400">john.doe@example.com</p>
+            <p class="text-lg font-semibold" id="user-name"></p>
+            <p class="text-sm text-gray-400" id="user-id"></p>
         </div>
     </div>
     <div class="card mb-4">
@@ -45,5 +47,24 @@
         </div>
     </div>
     <button class="w-full bg-red-500 text-white px-4 py-2 rounded">Save Changes</button>
+    <script>
+        // Получаем информацию о пользователе
+        const user = Telegram.WebApp.initDataUnsafe.user;
+        const userName = user.first_name + " " + (user.last_name || "") || user.username || "User   ";
+        const userId = user.id;
+        const userAvatar = user.photo_url || ""; // Если у пользователя есть аватар
+
+        // Устанавливаем имя пользователя, ID и аватар
+        document.getElementById('user-name').innerText = "Hi " + userName;
+        document.getElementById('user-id').innerText = userId;
+        if (userAvatar) {
+            document.getElementById('user-avatar').src = userAvatar;
+            document.getElementById('user-avatar').style.display = "block"; // Показываем аватар
+        } else {
+            document.getElementById('user-avatar').style.display = "none"; // Скрываем аватар, если его нет
+        }
+
+
+    </script>
 </body>
 </html>
